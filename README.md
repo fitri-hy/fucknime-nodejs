@@ -1,6 +1,6 @@
 # Selamat Datang Di FuckNime 🖕
 
-**FuckNime** adalah proyek streaming anime bersasis web menggunakan NodeJS. Tanpa database, Otomatis update, Ya, Iyalah kan dat ahasil nyekrep 🖕. dahlah yang penting project ini open-source buat yang minat, gak pake di encrypt kek dev-dev alay.
+**FuckNime** adalah proyek streaming anime bersasis web menggunakan NodeJS. Tanpa database, Otomatis update, Ya, Iyalah kan data hasil nyekrep 🖕. dahlah yang penting project ini open-source buat yang minat, kalo gak minat ya skip aja ribet luh & enggak pake di encrypt-encryptan kek dev alay onoh jadi luh bebas rombak.
 
 ## Instalasi
 
