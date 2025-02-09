@@ -63,9 +63,11 @@ Jika lo punya pertanyaan atau masalah, buka issue di repo ini, dan kita bakal ba
 
 **FuckNime** - Website nonton anime tanpa ribet! 🎉
 
+## Tinggalin Bintang Woy 🖕🖕
+
 <img src="./public/ss/1.png">
 <img src="./public/ss/2.png">
 <img src="./public/ss/3.png">
 <img src="./public/ss/4.png">
 <img src="./public/ss/5.png">
-<img src="./public/ss/Screenshot.png">
+<img src="./public/ss/6.png">
