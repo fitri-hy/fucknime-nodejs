@@ -1,6 +1,6 @@
 # Selamat Datang Di FuckNime 🖕
 
-**FuckNime** adalah platform streaming anime open-source yang bikin nonton anime jadi gampang tanpa ribet! Nikmati anime terbaik dengan kualitas gila, dan API yang gampang banget buat lo integrasiin ke aplikasi atau website lo. Semua ini GRATIS—kenapa harus bayar kalau bisa nonton anime dengan santai tanpa pusing?
+**FuckNime** adalah proyek streaming anime bersasis web menggunakan NodeJS. Tanpa database, Otomatis update, Ya, Iyalah kan dat ahasil nyekrep 🖕. dahlah yang penting project ini open-source buat yang minat, gak pake di encrypt kek dev-dev alay.
 
 ## Instalasi
 
