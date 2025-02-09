@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title><%= site_title %></title>
+	<meta name="description" content="<%= site_desc %>">
+	<meta name="keywords" content="<%= site_keyword %>">
+	<meta property="og:title" content="<%= site_title %>">
+	<meta property="og:description" content="<%= site_desc %>">
+	<meta property="og:url" content="https://<%= site_url %>">
+	<meta property="og:image" content="https://<%= site_url %>/assets/images/og.png">
+	<%- include('partials/head'); %>
+</head>
+<body class="container mx-auto bg-[#fbfbfb] dark:bg-[#28282B] text-gray-800 dark:text-gray-200 transition-all duration-200">
+	<%- include('partials/header'); %>
+	
+	<main class="mt-20 md:mt-4 flex flex-col gap-4 h-full w-full bg-white dark:bg-neutral-900 mb-4 shadow-sm p-4 md:p-6 rounded transition-all duration-200">
+		<div class="relative text-center">
+			<h1 class="font-bold text-3xl">
+				Terjadi Kesalahan
+			<h1>
+			<p class="">
+				Fuck You!! Coba Lagi Nanti.
+			</p>
+			<img class="rounded w-52 h-auto m-auto mt-4" src="/assets/images/500.gif" alt="500">
+			<div class="mt-6">
+				<a href="javascript:window.history.back();" class="px-4 py-2 bg-neutral-600 text-white hover:bg-neutral-700 rounded">
+					Kembali
+				</a>
+			</div>
+		</div>
+    </main>
+	
+    <%- include('partials/footer'); %>
+    <%- include('partials/script'); %>
+</body>
+</html>

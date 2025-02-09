@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title><%= site_title %></title>
+    <meta name="description" content="<%= site_desc %>">
+    <meta name="keywords" content="<%= site_keyword %>">
+    <meta property="og:title" content="<%= site_title %>">
+    <meta property="og:description" content="<%= site_desc %>">
+    <meta property="og:url" content="https://<%= site_url %>">
+    <meta property="og:image" content="https://<%= site_url %>/assets/images/og.png">
+
+    <%- include('partials/head'); %>
+    <link id="prism-css" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" rel="stylesheet" />
+	<link href="/assets/css/typography.css" rel="stylesheet">
+</head>
+<body class="container mx-auto bg-[#fbfbfb] dark:bg-[#28282B] text-gray-800 dark:text-gray-200 transition-all duration-200">
+    <%- include('partials/header'); %>
+
+	<div class="mt-20 md:mt-4 md:flex gap-4 my-4 max-w-7xl m-auto">
+		<section class="hidden md:flex md:sticky top-4 mt-4 md:mt-0 w-full md:w-80 h-screen p-4 bg-white dark:bg-neutral-900 shadow-sm rounded transition-all duration-200 overflow-y-auto">
+			<nav class="flex flex-col gap-1">
+				<a href="#perkenalan" class="px-3 py-1 hover:font-semibold rounded hover:bg-gray-50 dark:hover:bg-neutral-800 hover:scale-105 hover:shadow-sm transition-all duration-200">
+					Pengenalan
+				</a>
+				<a href="#basis" class="px-3 py-1 hover:font-semibold rounded hover:bg-gray-50 dark:hover:bg-neutral-800 hover:scale-105 hover:shadow-sm transition-all duration-200">
+					Basis
+				</a>
+				<a href="#filter" class="px-3 py-1 hover:font-semibold rounded hover:bg-gray-50 dark:hover:bg-neutral-800 hover:scale-105 hover:shadow-sm transition-all duration-200">
+					Filter
+				</a>
+				<a href="#daftar" class="px-3 py-1 hover:font-semibold rounded hover:bg-gray-50 dark:hover:bg-neutral-800 hover:scale-105 hover:shadow-sm transition-all duration-200">
+					Daftar
+				</a>
+				<a href="#pencarian" class="px-3 py-1 hover:font-semibold rounded hover:bg-gray-50 dark:hover:bg-neutral-800 hover:scale-105 hover:shadow-sm transition-all duration-200">
+					Pencarian
+				</a>
+				<a href="#detail" class="px-3 py-1 hover:font-semibold rounded hover:bg-gray-50 dark:hover:bg-neutral-800 hover:scale-105 hover:shadow-sm transition-all duration-200">
+					Detail
+				</a>
+				<a href="#episode" class="px-3 py-1 hover:font-semibold rounded hover:bg-gray-50 dark:hover:bg-neutral-800 hover:scale-105 hover:shadow-sm transition-all duration-200">
+					Episode
+				</a>
+			</nav>
+		</section>
+		<main id="artikel" class="flex flex-col gap-4 h-full w-full bg-white dark:bg-neutral-900 shadow-sm p-4 md:p-6 rounded transition-all duration-200">
+			<h1 class="text-center"><%= site_title %></h1>
+			<div><%- docs %></div>
+		</main>
+	</div>
+
+    <%- include('partials/footer'); %>
+    <%- include('partials/script'); %>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script> <!-- PrismJS Core JS -->
+    <script>
+        function changePrismTheme(theme) {
+            const prismCssLink = document.getElementById('prism-css');
+            if (theme === 'dark') {
+                prismCssLink.href = 'https://cdnjs.cloudflare.com/ajax/libs/prism-themes/1.9.0/prism-a11y-dark.min.css';
+            } else {
+                prismCssLink.href = 'https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css';
+            }
+        }
+
+        let theme = localStorage.getItem('theme') || 'light';
+
+        document.documentElement.setAttribute('data-theme', theme);
+        document.documentElement.classList.toggle('dark', theme === 'dark');
+
+        changePrismTheme(theme);
+
+        function toggleTheme() {
+            theme = theme === 'dark' ? 'light' : 'dark';
+            localStorage.setItem('theme', theme);
+            document.documentElement.setAttribute('data-theme', theme);
+            document.documentElement.classList.toggle('dark', theme === 'dark');
+            changePrismTheme(theme);
+        }
+
+        const themeButton = document.getElementById('theme-toggle');
+        if (themeButton) {
+            themeButton.addEventListener('click', toggleTheme);
+        }
+    </script>
+
+</body>
+</html>

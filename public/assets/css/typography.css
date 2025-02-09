@@ -1,0 +1,191 @@
+pre {
+    margin-bottom: 25px !important;
+    border-radius: 5px !important;
+    font-size: 12px !important;
+    overflow-x: auto !important;
+}
+
+#artikel h1, h2, h3, h4, h5, h6 {
+    font-weight: bold !important;
+    margin-top: 0 !important;
+    margin-bottom: 0.5em !important;
+}
+
+#artikel h1 {
+    font-size: 2rem !important;
+}
+
+#artikel h2 {
+    font-size: 1.5rem !important;
+}
+
+#artikel h3 {
+    font-size: 1.25rem !important;
+}
+
+#artikel h4 {
+    font-size: 1rem !important;
+}
+
+#artikel h5 {
+    font-size: 0.75rem !important;
+}
+
+#artikel h6 {
+    font-size: 0.5rem !important;
+}
+
+#artikel p {
+    margin: 0 0 0.800em 0 !important;
+    font-size: 1rem !important;
+    line-height: 1.6 !important;
+}
+
+#artikel a {
+    color: #7621ff !important;
+    text-decoration: none !important;
+    transition: color 0.3s ease !important;
+}
+
+#artikel a:hover {
+    color: #6100fc !important;
+    text-decoration: underline !important;
+}
+
+#artikel blockquote {
+    border-left: 4px solid #007bff !important;
+    padding-left: 1em !important;
+    margin: 1em 0 !important;
+    font-style: italic !important;
+}
+
+#artikel th, td {
+    border: 1px solid #ddd !important;
+    padding: 0.75em !important;
+    text-align: left !important;
+    line-height: 1.6 !important;
+}
+
+#artikel th {
+    background-color: #f8f9fa !important;
+    font-weight: bold !important;
+}
+
+#artikel .dark th {
+    background-color: #2d2d2d !important;
+}
+
+#artikel ul, #artikel ol {
+    margin: 0 0 0.800em 0 !important;
+    padding-left: 1.5em !important;
+}
+
+#artikel ul li, #artikel ol li {
+    margin-bottom: 0 !important;
+    font-size: 1rem !important;
+    line-height: 1.6 !important;
+}
+
+#artikel ol {
+    list-style-type: decimal !important;
+}
+
+#artikel ul {
+    list-style-type: disc !important;
+}
+
+#artikel th, td {
+  padding: 12px 15px !important;
+  border: 1px solid #ddd !important;
+}
+
+#artikel th {
+  background-color: #f4f4f4 !important;
+  font-weight: bold !important;
+}
+
+#artikel tr:nth-child(even) {
+  background-color: #f9f9f9 !important;
+}
+
+#artikel tr:hover {
+  background-color: #f1f1f1 !important;
+  transition: background-color 0.3s ease !important;
+}
+
+table {
+    display: block !important;
+    overflow-x: auto !important;
+    width: 100% !important;
+    border-collapse: collapse !important;
+    margin: 1em 0 !important;
+    white-space: nowrap !important;
+}
+
+hr {
+	margin-bottom: 1rem !important;
+}
+
+.dark #artikel table {
+  border-color: #444 !important;
+}
+
+.dark #artikel th, .dark #artikel td {
+  border: 1px solid #444 !important;
+}
+
+.dark #artikel th {
+  background-color: #333 !important;
+  color: #fff !important;
+}
+
+.dark #artikel tr:nth-child(even) {
+  background-color: #2c2c2c !important;
+}
+
+.dark #artikel tr:nth-child(odd) {
+  background-color: #1f1f1f !important;
+}
+
+.dark #artikel tr:hover {
+  background-color: #444 !important;
+}
+
+
+@media (max-width: 768px) {
+    #artikel h1 {
+        font-size: 1.5rem !important;
+    }
+
+    #artikel h2 {
+        font-size: 1.25rem !important;
+    }
+
+    #artikel h3 {
+        font-size: 1rem !important;
+    }
+
+    #artikel h4 {
+        font-size: 0.75rem !important;
+    }
+
+    #artikel h5 {
+        font-size: 0.5rem !important;
+    }
+
+    #artikel h6 {
+        font-size: 0.35rem !important;
+    }
+
+    #artikel p {
+        font-size: 0.875rem !important;
+    }
+	
+    #artikel ul, #artikel ol {
+        padding-left: 1.25em !important;
+    }
+
+    #artikel ul li, #artikel ol li {
+        font-size: 0.875rem !important;
+    }
+}

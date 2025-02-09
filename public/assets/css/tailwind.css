@@ -1,0 +1,29 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  transition: background-color 0.3s ease, color 0.3s ease;
+  font-family: 'Lora', serif;
+}
+
+#theme-toggle {
+  transition: transform 0.3s ease;
+}
+
+::-webkit-scrollbar {
+  width: 6px !important;
+  height: 6px !important;
+}
+
+::-webkit-scrollbar-track {
+  border-radius: 10px !important;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 10px !important;
+}
+
+* {
+  scrollbar-width: thin !important;
+}
