@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title><%= site_title %></title>
+	<meta name="description" content="<%= site_desc %>">
+	<meta name="keywords" content="<%= site_keyword %>">
+	<meta property="og:title" content="<%= site_title %>">
+	<meta property="og:description" content="<%= site_desc %>">
+	<meta property="og:url" content="https://<%= site_url %>">
+	<meta property="og:image" content="https://<%= site_url %>/assets/images/og.png">
+	<%- include('partials/head'); %>
+</head>
+<body class="container mx-auto bg-[#fbfbfb] dark:bg-[#28282B] text-gray-800 dark:text-gray-200 transition-all duration-200">
+	<%- include('partials/header-komik'); %>
+	
+	<main class="mt-20 md:mt-4 flex flex-col gap-4 h-full w-full bg-white dark:bg-neutral-900 mb-4 shadow-sm p-4 md:p-6 rounded transition-all duration-200">
+		<h2 class="text-3xl font-bold text-center mb-6">
+			Pencarian 🔥
+		</h2>
+		<section class="flex flex-wrap justify-center items-center gap-4">
+			<% if (data.length > 0) { %>
+				<% data.forEach(item => { %>
+					<a href="/komik/detail/<%= item.slug %>" class="relative flex flex-col justify-center items-center h-[250px] w-[150px] md:h-[350px] md:w-[240px] shadow-md bg-white rounded shadow-sm hover:scale-105 transition-all duration-300 group">
+						<img class="h-full w-full object-cover rounded" src="<%= item.image %>" alt="<%= item.title %>" onerror="this.onerror=null; this.src='/assets/images/no-img.jpg';">
+						<div class="z-10 absolute flex flex-col rounded justify-end top-0 h-full w-full hover:bg-black/40 transition-all duration-300">
+							<h2 class="max-h-[50px] bg-black/60 px-2 py-2 pb-3 text-white rounded-b text-center overflow-hidden text-sm md:text-md font-semibold line-clamp-2">
+								<%= item.title %>
+							</h2>
+						</div>
+						<div class="z-20 top-2 right-2 text-gray-200 absolute bg-neutral-900 p-1 rounded text-xs">
+							<span><%= item.type %></span>
+						</div>
+						<div class="hidden h-12 w-12 group-hover:flex items-center justify-center absolute z-50 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-gray-200 bg-neutral-900 font-semibold p-2 rounded-full text-xs">
+							<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+								<path stroke-linecap="round" stroke-linejoin="round" d="M5.25 5.653c0-.856.917-1.398 1.667-.986l11.54 6.347a1.125 1.125 0 0 1 0 1.972l-11.54 6.347a1.125 1.125 0 0 1-1.667-.986V5.653Z" />
+							</svg>
+						</div>
+					</a>
+				<% }); %>
+			<% } else { %>
+				<p class="text-center text-gray-500 dark:text-gray-300">Tidak ada data tersedia.</p>
+			<% } %>
+		</section>
+
+		<!-- Pagination -->
+		<div class="md:col-span-12 text-center mt-12">
+			<nav aria-label="Page navigation example">
+				<ul class="inline-flex items-center -space-x-px">
+					<% if (prevPage) { %>
+						<li>
+							<a href="<%= prevPage %>" class="size-[40px] inline-flex justify-center items-center text-slate-500 dark:text-slate-300 bg-white duration-300 dark:bg-neutral-800 rounded-s-lg border border-gray-100 dark:border-neutral-700 hover:border-gray-200 dark:hover:border-neutral-700 hover:bg-gray-100 dark:hover:bg-gray-600">
+								<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+								  <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" />
+								</svg>
+							</a>
+						</li>
+					<% } else { %>
+						<li>
+							<a href="#" class="size-[40px] inline-flex justify-center items-center text-slate-300 bg-white duration-500 dark:bg-neutral-800 rounded-s-lg border border-gray-100 dark:border-gray-700 cursor-not-allowed">
+								<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+								  <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" />
+								</svg>
+							</a>
+						</li>
+					<% } %>
+							
+					<% if (nextPage) { %>
+						<li>
+							<a href="<%= nextPage %>" class="size-[40px] inline-flex justify-center items-center text-slate-500 dark:text-slate-300 bg-white duration-300 dark:bg-neutral-800 rounded-e-lg border border-gray-100 dark:border-neutral-700 hover:border-gray-200 dark:hover:border-neutral-700 hover:bg-gray-100 dark:hover:bg-gray-600">
+								<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+									<path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+								</svg>
+							</a>
+						</li>
+					<% } else { %>
+						<li>
+							<a href="#" class="size-[40px] inline-flex justify-center items-center text-slate-300 bg-white duration-500 dark:bg-neutral-800 rounded-e-lg border border-gray-100 dark:border-gray-700 cursor-not-allowed">
+								<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+									<path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+								</svg>
+							</a>
+						</li>
+					<% } %>
+				</ul>
+			</nav>
+		</div>
+		
+		<div class="h-[200px] border-2 border-dashed text-gray-500 border-gray-500 mt-6 flex justify-center items-center">
+			<span class="text-2xl font-bold">Ads Banner</span>
+		</div>
+	</main>
+
+    <%- include('partials/footer-komik'); %>
+    <%- include('partials/script'); %>
+</body>
+</html>

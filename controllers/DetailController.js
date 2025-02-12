@@ -7,7 +7,7 @@ exports.index = async (req, res) => {
         
         if (!slug) {
             return res.status(400).render('404', { 
-				site_title: 'Halaman Tidak Ada',
+				site_title: 'Halaman Tidak Ada | Anime',
 				site_desc: '',
 				site_keyword: '',
 				site_url: req.domain
@@ -27,7 +27,7 @@ exports.index = async (req, res) => {
 		getDataSidebar = dataSidebar.sort(() => 0.8 - Math.random()).slice(0, 8);
 		
         res.locals = {
-            site_title: `${data.title}`,
+            site_title: `${data.title} | Anime`,
             site_desc: `${data.description}`,
             site_keyword: 'detail anime, nonton anime, daftar anime, streaming anime',
             site_url: req.domain,
@@ -44,7 +44,7 @@ exports.index = async (req, res) => {
 
         if (statusCode === 404) {
             return res.status(404).render('404', { 
-				site_title: 'Halaman Tidak Ada',
+				site_title: 'Halaman Tidak Ada | Anime',
 				site_desc: '',
 				site_keyword: '',
 				site_url: req.domain
@@ -52,7 +52,7 @@ exports.index = async (req, res) => {
         }
 
         res.status(statusCode).render('500', { 
-            site_title: 'Terjadi Kesalahan',
+            site_title: 'Terjadi Kesalahan | Anime',
             site_desc: 'Gagal mendapatkan data, coba lagi nanti',
             site_keyword: 'error',
             site_url: req.domain,

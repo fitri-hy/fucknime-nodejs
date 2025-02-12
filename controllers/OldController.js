@@ -16,7 +16,7 @@ exports.index = async (req, res) => {
         const prevPage = page > 1 ? page - 1 : null;
 
         res.render('old', { 
-            site_title: 'Terlama',
+            site_title: 'Terlama | Anime',
 			site_desc: 'Jelajahi anime terlawas hingga saat ini.',
 			site_keyword: 'anime lama, anime klasik, anime jadul, anime lawas, arsip anime',
             site_url: req.domain,
@@ -28,7 +28,7 @@ exports.index = async (req, res) => {
     } catch (error) {
         console.error('Error fetching data:', error.response?.data || error.message);
         res.status(500).render('500', { 
-            site_title: 'Terjadi Kesalahan',
+            site_title: 'Terjadi Kesalahan | Anime',
             site_desc: 'Gagal mendapatkan data, coba lagi nanti',
             site_keyword: 'error',
             site_url: req.domain,

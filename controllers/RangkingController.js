@@ -16,7 +16,7 @@ exports.index = async (req, res) => {
         const prevPage = page > 1 ? page - 1 : null;
 
         res.render('rangking', { 
-            site_title: 'Peringkat',
+            site_title: 'Peringkat | Anime',
 			site_desc: 'Lihat peringkat anime terbaik berdasarkan penilaian.',
 			site_keyword: 'peringkat anime, ranking anime, anime terbaik, top anime, rating anime',
             site_url: req.domain,
@@ -28,7 +28,7 @@ exports.index = async (req, res) => {
     } catch (error) {
         console.error('Error fetching data:', error.response?.data || error.message);
         res.status(500).render('500', { 
-            site_title: 'Terjadi Kesalahan',
+            site_title: 'Terjadi Kesalahan | Anime',
             site_desc: 'Gagal mendapatkan data, coba lagi nanti',
             site_keyword: 'error',
             site_url: req.domain,

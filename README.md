@@ -1,10 +1,10 @@
-# Selamat Datang Di FuckNime 🖕
+# FuckNime X FuckMik
 
-**FuckNime** adalah proyek streaming anime bersasis web menggunakan NodeJS. Tanpa database, Otomatis update, Ya, Iyalah kan data hasil nyekrep 🖕. dahlah yang penting project ini open-source buat yang minat, kalo gak minat ya skip aja ribet luh & enggak pake di encrypt-encryptan kek dev alay onoh jadi luh bebas rombak.
+FuckNime X FuckMik adalah platform inovatif untuk menonton anime dan membaca manga serta manhwa sub indonesia dengan pembaruan data otomatis. Sistem ini mengadopsi teknik web scraping untuk mengambil data secara real-time tanpa memerlukan database, memastikan konten selalu terkini dan relevan.
 
 ## Instalasi
 
-1. Clone repo ini:
+1. Clone repo:
     ```bash
     git clone https://github.com/fitri-hy/fucknime-nodejs.git
     ```
@@ -16,6 +16,8 @@
 3. Jalankan server:
     ```bash
     npm start
+    # atau
+    npm run dev
     ```
 
 4. Akses aplikasi via browser:
@@ -25,7 +27,7 @@
 
 ## Produksi
 
-1. Sesuaikan URL Socketnya `/public/assets/chat-embed.js`
+1. Sesuaikan URL Socket Realtime Public Chatting `/public/assets/chat-embed.js`
 
 ```javascript
 const socket = io("http://localhost:3000", {
@@ -34,21 +36,27 @@ const socket = io("http://localhost:3000", {
 });
 ```
 
-2. Sesuaikan Basis Url Dokumentasi Yang Tampil `/database/docs.json`
+2. Sesuaikan Basis Url Untuk Dokumentasi Yang Tampil `/database/docs.json`
 
 ```json
 "content": "Cari disini ..."
 ```
 
+3. Sesuaikan Basis Url Situs Di `.env`
+
+```bash
+BASE_URL='http://localhost:3000'
+```
+
 ## Kontribusi
 
-Lo bisa banget bantu develop proyek ini! Cukup fork repo ini, bikin perubahan, dan buat pull request.
+Kamu bisa banget bantu develop proyek ini! Cukup fork repo ini, bikin perubahan, dan buat pull request.
 
 1. Fork repo ini
-2. Bikin branch baru (`git checkout -b feature-xyz`)
-3. Lakukan perubahan lo
-4. Commit perubahan lo (`git commit -am 'Add new feature'`)
-5. Push ke branch lo (`git push origin feature-xyz`)
+2. Buat branch baru (`git checkout -b feature-xyz`)
+3. Lakukan perubahan
+4. Commit perubahan (`git commit -am 'Add new feature'`)
+5. Push ke branch (`git push origin feature-xyz`)
 6. Buat pull request
 
 ## Lisensi
@@ -57,17 +65,13 @@ Proyek ini dilisensikan di bawah MIT License. Lihat [LICENSE](LICENSE) untuk inf
 
 ## Dukungan
 
-Jika lo punya pertanyaan atau masalah, buka issue di repo ini, dan kita bakal bantu sebisa mungkin.
+Jika kamu punya pertanyaan atau masalah, buka issue di repo ini, dan kita bakal bantu sebisa mungkin.
 
 ---
 
-**FuckNime** - Website nonton anime tanpa ribet! 🎉
-
-## Tinggalin Bintang Woy 🖕🖕
-
-<img src="./public/ss/1.png">
-<img src="./public/ss/2.png">
-<img src="./public/ss/3.png">
-<img src="./public/ss/4.png">
-<img src="./public/ss/5.png">
-<img src="./public/ss/6.png">
+<img src="./public/ss/x1.png">
+<img src="./public/ss/x2.png">
+<img src="./public/ss/x3.png">
+<img src="./public/ss/x4.png">
+<img src="./public/ss/x5.png">
+<img src="./public/ss/x6.png">

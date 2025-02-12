@@ -1,10 +1,10 @@
 <footer class="flex items-center w-full rounded-t shadow-sm justify-center p-4 bg-white dark:bg-neutral-900 transition-all duration-200">
-  <span class="text-center">© <script>document.write(new Date().getFullYear());</script> <a class="font-semibold hover:underline transition-all duration-200" href="/">FuckNime</a>. All right reserved.</span>
+  <span class="text-center">© <script>document.write(new Date().getFullYear());</script> <a class="font-semibold hover:underline transition-all duration-200" href="/komik">FuckMik</a>. All right reserved.</span>
 </footer>
 
 <div id="searchModal" class="z-50 hidden fixed inset-0 flex items-center justify-center bg-black/20 backdrop-blur-sm transition-opacity duration-300 p-6">
     <div id="searchModalContent" class="bg-white dark:bg-neutral-800 p-6 rounded-lg shadow-lg w-full md:max-w-md transform scale-75 opacity-0 transition-all duration-300">
-        <form action="/pencarian">
+        <form action="/komik/pencarian">
 			<h2 class="text-lg font-semibold mb-4">Cari Anime</h2>
 			<input name="q" type="text" placeholder="Masukkan kata pencarian..." class="bg-white dark:bg-neutral-900 w-full p-2 border border-gray-200 dark:border-neutral-700 rounded focus:outline-none">
 			<div class="mt-4 flex gap-2 justify-end">
@@ -23,32 +23,32 @@
 	</button>
 	<nav class="mt-16 flex flex-col space-y-4 p-4">
 		<nav class="flex flex-col gap-1">
-			<a href="/" class="px-3 py-1 hover:font-semibold rounded hover:bg-gray-50 dark:hover:bg-neutral-800 hover:scale-105 hover:shadow-sm transition-all duration-200">
+			<a href="/komik" class="px-3 py-1 hover:font-semibold rounded hover:bg-gray-50 dark:hover:bg-neutral-800 hover:scale-105 hover:shadow-sm transition-all duration-200">
 				Beranda
 			</a>
-			<a href="/terbaru" class="px-3 py-1 hover:font-semibold rounded hover:bg-gray-50 dark:hover:bg-neutral-800 hover:scale-105 hover:shadow-sm transition-all duration-200">
+			<a href="/komik/terbaru" class="px-3 py-1 hover:font-semibold rounded hover:bg-gray-50 dark:hover:bg-neutral-800 hover:scale-105 hover:shadow-sm transition-all duration-200">
 				Terbaru
 			</a>
-			<a href="/terlama" class="px-3 py-1 hover:font-semibold rounded hover:bg-gray-50 dark:hover:bg-neutral-800 hover:scale-105 hover:shadow-sm transition-all duration-200">
-				Terlama
+			<a href="/komik/terupdate" class="px-3 py-1 hover:font-semibold rounded hover:bg-gray-50 dark:hover:bg-neutral-800 hover:scale-105 hover:shadow-sm transition-all duration-200">
+				Terupdate
 			</a>
-			<a href="/populer" class="px-3 py-1 hover:font-semibold rounded hover:bg-gray-50 dark:hover:bg-neutral-800 hover:scale-105 hover:shadow-sm transition-all duration-200">
-				Populer
-			</a>
-			<a href="/peringkat" class="px-3 py-1 hover:font-semibold rounded hover:bg-gray-50 dark:hover:bg-neutral-800 hover:scale-105 hover:shadow-sm transition-all duration-200">
+			<a href="/komik/peringkat" class="px-3 py-1 hover:font-semibold rounded hover:bg-gray-50 dark:hover:bg-neutral-800 hover:scale-105 hover:shadow-sm transition-all duration-200">
 				Peringkat
 			</a>
-			<a href="/filter" class="px-3 py-1 hover:font-semibold rounded hover:bg-gray-50 dark:hover:bg-neutral-800 hover:scale-105 hover:shadow-sm transition-all duration-200">
+			<a href="/komik/filter" class="px-3 py-1 hover:font-semibold rounded hover:bg-gray-50 dark:hover:bg-neutral-800 hover:scale-105 hover:shadow-sm transition-all duration-200">
 				Filter
+			</a>
+			<a href="/komik/acak" class="px-3 py-1 hover:font-semibold rounded hover:bg-gray-50 dark:hover:bg-neutral-800 hover:scale-105 hover:shadow-sm transition-all duration-200">
+				Acak
 			</a>
 		</nav>
 	</nav>
 </div>
 
-<div class="fixed -left-10 top-1/2">
-	<a href="/komik">
+<div class="fixed -left-1 -ml-12 top-1/2">
+	<a href="/">
 		<div class="rotate-90 bg-gray-700 dark:bg-neutral-700 hover:bg-gray-600 hover:dark:bg-neutral-600 text-gray-200 py-2 px-4 rounded-t transition-all duration-300 hover:scale-105 hover:font-bold">
-			Baca Komik
+			Nonton Anime
 		</div>
 	</a>
 </div>

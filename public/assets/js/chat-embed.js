@@ -36,6 +36,7 @@
     let formattedRoute = route
         .replace(/^\/+/, '')
         .replace(/^(anime\/|episode\/)/, '')
+        .replace(/^(komik\/)/, '')
         .replace(/-/g, ' ')
         .toLowerCase()
         .replace(/\b\w/g, (char) => char.toUpperCase());

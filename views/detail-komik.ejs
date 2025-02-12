@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title><%= site_title %></title>
+    <meta name="description" content="<%= site_desc %>">
+    <meta name="keywords" content="<%= site_keyword %>">
+    <meta property="og:title" content="<%= site_title %>">
+    <meta property="og:description" content="<%= site_desc %>">
+    <meta property="og:url" content="https://<%= site_url %>">
+    <meta property="og:image" content="https://<%= site_url %>/assets/images/og.png">
+
+    <%- include('partials/head'); %>
+</head>
+<body class="container mx-auto bg-[#fbfbfb] dark:bg-[#28282B] text-gray-800 dark:text-gray-200 transition-all duration-200">
+    <%- include('partials/header-komik'); %>
+
+	<div class="mt-20 md:mt-4 md:flex gap-4 my-4 m-auto">
+		
+		<article class="flex flex-col gap-4 h-full w-full bg-white dark:bg-neutral-900 shadow-sm px-4 py-6 md:px-6 rounded transition-all duration-200">
+			<section class="md:flex gap-4">
+				<div>
+					<img class="w-[250px] md:w-[400px] m-auto h-auto rounded" src="<%= data.image %>" alt="<%= data.title %>">
+				</div>
+				<div class="mt-6 md:mt-0">
+					<h2 class="text-center md:text-left text-xl font-bold overflow-hidden line-clamp-2">
+						<%= data.title %>
+					</h2>
+					<p class="text-center md:text-left mt-4">
+						<%= data.description %>
+					</p>
+					
+					<div class="grid grid-cols-1 mt-4">
+						<div class="grid grid-cols-3 bg-gray-100 dark:bg-neutral-800 p-2">
+							<div class="font-semibold">
+								Status
+							</div>
+							<div class="font-semibold">
+								Tipe
+							</div>
+							<div class="font-semibold">
+								Cerita
+							</div>
+						</div>
+						<div class="grid grid-cols-3 p-2">
+							<div>
+								<%= data.status.length > 16 ? data.status.slice(0, 16) + "..." : data.status %>
+							</div>
+							<div>
+								<%= data.type.length > 16 ? data.type.slice(0, 16) + "..." : data.type %>
+							</div>
+							<div>
+								<%= data.story.length > 16 ? data.story.slice(0, 16) + "..." : data.story %>
+							</div>
+						</div>
+						
+						<div class="grid grid-cols-3 bg-gray-100 dark:bg-neutral-800 p-2">
+							<div class="font-semibold">
+								Pembaca
+							</div>
+							<div class="font-semibold">
+								Umur
+							</div>
+							<div class="font-semibold">
+								Penulis
+							</div>
+						</div>
+						<div class="grid grid-cols-3 p-2">
+							<div>
+								<%= data.read.length > 16 ? data.read.slice(0, 16) + "..." : data.read %>
+							</div>
+							<div>
+								<%= data.age.length > 16 ? data.age.slice(0, 16) + "..." : data.age %>
+							</div>
+							<div>
+								<%= data.author.length > 16 ? data.author.slice(0, 16) + "..." : data.author %>
+							</div>
+						</div>
+						
+						<div class="grid grid-cols-1 bg-gray-100 dark:bg-neutral-800 p-2">
+							<div class="font-semibold">
+								Genre
+							</div>
+						</div>
+						<div class="grid grid-cols-1 p-2">
+							<div>
+								<%= data.genres %>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			
+			<div class="h-[200px] border-2 border-dashed text-gray-500 border-gray-500 mt-6 flex justify-center items-center">
+				<span class="text-2xl font-bold">Ads Banner</span>
+			</div>
+		
+			<section class="mt-9 flex flex-col gap-4 w-full">
+				<h2 class="text-xl font-semibold">
+					Semua Chapters 🔥
+				</h2>
+				<% if (chapters.length > 0) { %>
+					<div class="grid grid-cols-1 md:grid-cols-2 gap-2">
+						<% chapters.forEach(items => { %>
+							<a href="/komik/chapter/<%= items.slug %>" class="block">
+								<div class="w-full flex items-center gap-3 p-3 hover:scale-105 duration-300 rounded bg-gray-100 shadow-sm dark:bg-neutral-800 transition-all hover:bg-gray-200 dark:hover:bg-neutral-700">
+									<div class="flex-shrink-0 w-8 h-8 flex items-center justify-center bg-gray-600 dark:bg-neutral-600 text-white font-bold rounded shadow-sm">
+										<%= items.title.split(' ')[1] %> %>
+									</div>
+									<div class="w-full flex-1">
+										<h3 class="text-lg font-semibold text-gray-900 dark:text-white">
+											<%= items.title %>
+										</h3>
+										<div class="text-xs flex items-center gap-4">
+											<span class="flex gap-1 items-center">
+												<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-3">
+												  <path stroke-linecap="round" stroke-linejoin="round" d="M2.036 12.322a1.012 1.012 0 0 1 0-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178Z" />
+												  <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+												</svg>
+												<%= items.views %>
+											</span>
+											<span class="flex gap-1 items-center">
+												<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-3">
+												  <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 0 1 2.25-2.25h13.5A2.25 2.25 0 0 1 21 7.5v11.25m-18 0A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75m-18 0v-7.5A2.25 2.25 0 0 1 5.25 9h13.5A2.25 2.25 0 0 1 21 11.25v7.5" />
+												</svg>
+												<%= items.date %>
+											</span>
+										</div>
+									</div>
+									<div class="text-gray-800 dark:text-gray-300">
+										<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-8 w-8">
+										  <path stroke-linecap="round" stroke-linejoin="round" d="M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+										  <path stroke-linecap="round" stroke-linejoin="round" d="M15.91 11.672a.375.375 0 0 1 0 .656l-5.603 3.113a.375.375 0 0 1-.557-.328V8.887c0-.286.307-.466.557-.327l5.603 3.112Z" />
+										</svg>
+									</div>
+								</div>
+							</a>
+						<% }) %>
+					</div>
+				<% } else { %>
+					<p class="text-gray-500 dark:text-gray-400 mt-4">Belum ada chapter tersedia.</p>
+				<% } %>
+			</section>
+			
+			<div class="h-[200px] border-2 border-dashed text-gray-500 border-gray-500 mt-6 flex justify-center items-center">
+				<span class="text-2xl font-bold">Ads Banner</span>
+			</div>
+		</article>
+		
+		<section class="md:sticky top-4 mt-4 md:mt-0 w-full md:max-w-xs h-screen p-4 bg-white dark:bg-neutral-900 shadow-sm rounded transition-all duration-00 overflow-y-auto">
+			<div class="flex flex-col gap-1">
+				
+				<div class="h-[150px] border-2 border-dashed text-gray-500 border-gray-500 mt-6 flex justify-center items-center">
+					<span class="text-2xl font-bold">Ads Banner</span>
+				</div>
+				
+				<h2 class="text-xl font-semibold mt-4">
+					Populer 🔥
+				</h2>
+				<% if (Array.isArray(getDataSidebar) && getDataSidebar.length > 0) { %>
+					<div class="space-y-3 mt-4">
+						<% getDataSidebar.forEach(items => { %>
+							<a href="/komik/detail/<%= items.slug %>" class="block">
+								<div class="flex items-center gap-3 p-3 rounded bg-gray-100 shadow-sm dark:bg-neutral-800 transition-all duration-300 hover:bg-gray-200 dark:hover:bg-neutral-700 hover:scale-105">
+									<img src="<%= items.image %>" alt="<%= items.title %>" class="w-12 h-14 rounded object-cover">
+									<div class="flex-1">
+										<h3 class="text-sm font-medium text-gray-900 dark:text-white line-clamp-2">
+											<%= items.title %>
+										</h3>
+										<p class="text-sm text-gray-500 dark:text-gray-400">
+											<%= items.type %> • <%= items.genre %>
+										</p>
+									</div>
+								</div>
+							</a>
+						<% }) %>
+					</div>
+				<% } else { %>
+					<p class="text-gray-500 dark:text-gray-400 mt-4">Belum ada items tersedia.</p>
+				<% } %>
+			</div>
+		</section>
+		
+	</div>
+
+    <%- include('partials/footer-komik'); %>
+    <%- include('partials/script'); %>
+</body>
+</html>

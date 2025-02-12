@@ -547,6 +547,12 @@ video {
 .inset-0 {
   inset: 0px;
 }
+.-left-1 {
+  left: -0.25rem;
+}
+.-left-10 {
+  left: -2.5rem;
+}
 .bottom-20 {
   bottom: 5rem;
 }
@@ -602,6 +608,9 @@ video {
 .my-4 {
   margin-top: 1rem;
   margin-bottom: 1rem;
+}
+.-ml-12 {
+  margin-left: -3rem;
 }
 .mb-4 {
   margin-bottom: 1rem;
@@ -673,6 +682,9 @@ video {
 }
 .h-14 {
   height: 3.5rem;
+}
+.h-3 {
+  height: 0.75rem;
 }
 .h-5 {
   height: 1.25rem;
@@ -769,6 +781,10 @@ video {
 }
 .translate-x-full {
   --tw-translate-x: 100%;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+.rotate-90 {
+  --tw-rotate: 90deg;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 .scale-100 {
@@ -1236,6 +1252,10 @@ body {
   background-color: rgb(64 64 64 / var(--tw-bg-opacity, 1));
 }
 
+.hover\:font-bold:hover {
+  font-weight: 700;
+}
+
 .hover\:font-semibold:hover {
   font-weight: 600;
 }
@@ -1377,6 +1397,11 @@ body {
   background-color: rgb(115 115 115 / var(--tw-bg-opacity, 1));
 }
 
+.hover\:dark\:bg-neutral-600:is(.dark *):hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(82 82 82 / var(--tw-bg-opacity, 1));
+}
+
 @media (min-width: 768px) {
 
   .md\:static {
@@ -1409,6 +1434,10 @@ body {
 
   .md\:h-\[350px\] {
     height: 350px;
+  }
+
+  .md\:h-\[450px\] {
+    height: 450px;
   }
 
   .md\:w-80 {

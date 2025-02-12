@@ -3,13 +3,13 @@ require('dotenv').config();
 
 exports.index = async (req, res) => {
     try {
-        const genre = req.query.genre || 'aksi';
-        const status = req.query.status || '';
         const type = req.query.type || '';
-        const order = req.query.order || 'default';
+        const order = req.query.order || '';
+        const genre = req.query.genre || '';
+        const status = req.query.status || '';
         const page = Number(req.query.page) || 1;
 
-        const apiUrl = `${process.env.BASE_URL}/v1/filter/advance?genre=${genre}&status=${status}&tipe=${type}&order=${order}&page=${page}`;
+        const apiUrl = `${process.env.BASE_URL}/v1/komik/list?type=${type}&order=${order}&genre=${genre}&status=${status}&page=${page}`;
         const response = await axios.get(apiUrl, {
             headers: { 'x-api-key': process.env.API_KEY }
         });
@@ -28,10 +28,10 @@ exports.index = async (req, res) => {
         };
 
         const [filterOrder, filterType, filterGenre, filterStatus] = await Promise.all([
-            fetchFilter(`${process.env.BASE_URL}/v1/filter/order`),
-            fetchFilter(`${process.env.BASE_URL}/v1/filter/type`),
-            fetchFilter(`${process.env.BASE_URL}/v1/filter/genre`),
-            fetchFilter(`${process.env.BASE_URL}/v1/filter/status`)
+            fetchFilter(`${process.env.BASE_URL}/v1/komik/order`),
+            fetchFilter(`${process.env.BASE_URL}/v1/komik/type`),
+            fetchFilter(`${process.env.BASE_URL}/v1/komik/genre`),
+            fetchFilter(`${process.env.BASE_URL}/v1/komik/status`)
         ]);
 
         const queryParams = new URLSearchParams({ genre, status, type, order });
@@ -39,10 +39,10 @@ exports.index = async (req, res) => {
         const nextPageUrl = data.length > 0 ? `?${queryParams.toString()}&page=${page + 1}` : null;
         const prevPageUrl = page > 1 ? `?${queryParams.toString()}&page=${page - 1}` : null;
 
-        res.render('filter', { 
-            site_title: 'Filter | Anime',
-            site_desc: 'Gunakan filter untuk menemukan anime sesuai preferensi Anda.',
-			site_keyword: 'filter anime, sortir anime, pencarian anime, kategori anime, genre anime',
+        res.render('komik-filter', { 
+            site_title: 'Filter | Komik',
+            site_desc: 'Gunakan filter untuk menemukan komik sesuai preferensi Anda.',
+			site_keyword: 'filter komik, sortir komik, pencarian komik, kategori komik, genre komik',
             site_url: req.domain,
             data,
             filterOrder,
@@ -61,7 +61,7 @@ exports.index = async (req, res) => {
     } catch (error) {
         console.error('Error fetching data:', error.response?.data || error.message);
         res.status(500).render('500', { 
-            site_title: 'Terjadi Kesalahan | Anime',
+            site_title: 'Terjadi Kesalahan | Komik',
             site_desc: 'Gagal mendapatkan data, coba lagi nanti',
             site_keyword: 'error',
             site_url: req.domain,
