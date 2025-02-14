@@ -25,7 +25,7 @@ FuckNime X FuckMik adalah platform inovatif untuk menonton anime dan membaca man
     http://localhost:3000
     ```
 
-## Instalasi App
+## Instalasi Aplikasi Flutter
 
 1. Konfigurasi Basis URL `App-Flutter/fucknime/lib/config.dart`
 	```javascript
