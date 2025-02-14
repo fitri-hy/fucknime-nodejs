@@ -2,7 +2,7 @@
 
 FuckNime X FuckMik adalah platform inovatif untuk menonton anime dan membaca manga serta manhwa sub indonesia dengan pembaruan data otomatis. Sistem ini mengadopsi teknik web scraping untuk mengambil data secara real-time tanpa memerlukan database, memastikan konten selalu terkini dan relevan.
 
-## Instalasi
+## Instalasi Web
 
 1. Clone repo:
     ```bash
@@ -24,6 +24,19 @@ FuckNime X FuckMik adalah platform inovatif untuk menonton anime dan membaca man
     ```bash
     http://localhost:3000
     ```
+
+## Instalasi App
+
+1. Konfigurasi Basis URL `App-Flutter/fucknime/lib/config.dart`
+	```javascript
+	static const String baseUrl = "http://192.168.1.15:3000/v1";
+	```
+
+1. Jalankan `App-Flutter/fucknime/`
+	```bash
+	flutter pub get
+	flutter run
+	```
 
 ## Produksi
 
