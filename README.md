@@ -80,13 +80,7 @@ Proyek ini dilisensikan di bawah MIT License. Lihat [LICENSE](LICENSE) untuk inf
 
 Jika kamu punya pertanyaan atau masalah, buka issue di repo ini, dan kita bakal bantu sebisa mungkin.
 
-#### Download Demo [FuckNime.apk](https://raw.githubusercontent.com/fitri-hy/fucknime-nodejs/refs/heads/main/App-Flutter/fucknime.apk)
-
 ---
 
-<img src="./public/ss/x1.png">
-<img src="./public/ss/x2.png">
-<img src="./public/ss/x3.png">
-<img src="./public/ss/x4.png">
-<img src="./public/ss/x5.png">
-<img src="./public/ss/x6.png">
+<img src="./public/ss/1.png">
+<img src="./public/ss/2.png">
