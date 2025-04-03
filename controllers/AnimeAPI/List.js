@@ -16,7 +16,7 @@ exports.index = async (req, res) => {
       const title = $(element).find('.tt').text().trim();
       const slug = $(element).find('a').attr('href')?.replace(/^https:\/\/v9\.animasu\.cc\/anime\//, '').replace(/\/$/, '') || '#';
 
-      const image = $(element).find('img').attr('src') || '';
+      const image = $(element).find('img').attr('data-lazy-src') || '';
       const episodes = $(element).find('.bt .epx').text().trim();
       const status = $(element).find('.bt .sb').text().trim();
       const type = $(element).find('.typez').text().trim();
