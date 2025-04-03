@@ -11,7 +11,7 @@ exports.index = async (req, res) => {
     const $ = cheerio.load(data);
 
     const title = $('.infox h1[itemprop="headline"]').text().trim();
-    const imageUrl = `https:${$('.thumb img').attr('src')}`;
+    const imageUrl = `https:${$('.thumb img').attr('data-lazy-src')}`;
     const description = $('.sepele').text().trim().replace(/Animasu/gi, 'FuckNime') || "-";
     const status = $('.spe span:contains("Status:") font').text().trim() || "-";
     const releaseDate = $('.spe span.split:contains("Rilis:")').text().replace('Rilis:', '').trim() || "-";
