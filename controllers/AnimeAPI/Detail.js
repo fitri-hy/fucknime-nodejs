@@ -32,7 +32,7 @@ exports.index = async (req, res) => {
 	const episodesList = $('#daftarepisode li')
       .map((i, el) => {
         const episodeTitle = $(el).find('a').first().text().trim();
-        const episodeUrl = $(el).find('a').first().attr('href').replace(/^https:\/\/v9\.animasu\.cc\//, '').replace(/\/$/, '').trim() || "";
+        const episodeUrl = $(el).find('a').first().attr('href').replace(/^https?:\/\/v1\.animasu\.top\//, '').replace(/\/$/, '').trim() || "";
 
         return {
           title: episodeTitle,

@@ -15,7 +15,7 @@ exports.index = async (req, res) => {
 
     $('.listupd .bsx').each((i, element) => {
       const title = $(element).find('.tt').text().trim();
-      const slug = $(element).find('a').attr('href')?.replace(/^https:\/\/v9\.animasu\.cc\/anime\//, '').replace(/\/$/, '') || '#';
+      const slug = $(element).find('a').attr('href')?.replace(/^https?:\/\/v1\.animasu\.top\/anime\//, '').replace(/\/$/, '') || '#';
 
       const image = $(element).find('img').attr('src') || '';
       const episodes = $(element).find('.bt .epx').text().trim();

@@ -15,7 +15,7 @@ exports.index = async (req, res) => {
 
     $('.listo .bx').each((i, element) => {
       const title = $(element).find('.inx h2 a').text().trim();
-      const slug = $(element).find('.inx h2 a').attr('href')?.replace(/^https:\/\/v9\.animasu\.cc\/anime\//, '').replace(/\/$/, '') || '#';
+      const slug = $(element).find('.inx h2 a').attr('href')?.replace(/^https?:\/\/v1\.animasu\.top\/anime\//, '').replace(/\/$/, '') || '#';
       const image = $(element).find('.imgx img').attr('src') || '';
       const genres = $(element).find('.inx span:contains("Genre:") a').map((i, el) => $(el).text().trim()).get() || "-";
       const releaseDate = $(element).find('.inx .split:contains("Rilis:")').text().replace('Rilis:', '').trim() || "-";

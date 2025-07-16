@@ -9,7 +9,7 @@
     "watch:css": "npx postcss public/assets/css/tailwind.css -o public/assets/css/styles.css --watch"
   },
   "keywords": [],
-  "author": "",
+  "author": "Fhylabs",
   "license": "MIT",
   "description": "",
   "dependencies": {
@@ -26,6 +26,7 @@
   "devDependencies": {
     "autoprefixer": "^10.4.20",
     "concurrently": "^9.1.2",
+    "nodemon": "^3.1.10",
     "postcss": "^8.4.49",
     "postcss-cli": "^11.0.0",
     "tailwindcss": "^3.4.17"
