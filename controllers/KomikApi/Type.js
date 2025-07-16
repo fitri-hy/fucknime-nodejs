@@ -1,15 +1,16 @@
 const axios = require('axios');
 const cheerio = require('cheerio');
 const { setCache } = require('../../middlewares/CacheAPI');
+const { ProtocolFallback } = require('../../helpers/ProtocolHelper');
 
 exports.index = async (req, res) => {
   try {
-    const response = await axios.get('https://komiku.id/pustaka/');
-    const html = response.data;
+	const url = `komiku.org/pustaka/`;
+    const html = await ProtocolFallback(url);
     const $ = cheerio.load(html);
 
     const type = [];
-    $('select[name="category_name"] option').each((i, element) => {
+    $('select[name="tipe"] option').each((i, element) => {
       const title = $(element).text().trim();
       const slug = $(element).attr('value').trim() || '';
 

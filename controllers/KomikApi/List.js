@@ -1,18 +1,19 @@
 const axios = require('axios');
 const cheerio = require('cheerio');
 const { setCache } = require('../../middlewares/CacheAPI');
+const { ProtocolFallback } = require('../../helpers/ProtocolHelper');
 
 exports.index = async (req, res) => {
-  const { type = '', order = '', genre = '', status = '', page = 1 } = req.query;
+  const { type = '', order = '', genre = '', genre2 = '',status = '', page = 1 } = req.query;
   
   try {
-    const response = await axios.get(`https://api.komiku.id/manga/page/${page}/?orderby=${order}&category_name=${type}&genre=${genre}&status=${status}`);
-    const html = response.data;
+    const url = `api.komiku.org/manga/page/${page}/?orderby=${order}&tipe=${type}&genre=${genre}&genre2=${genre2}&status=${status}`;
+	const html = await ProtocolFallback(url);
     const $ = cheerio.load(html);
 	
 	const list = [];
     $('.bge').each((i, element) => {
-      const slug = $(element).find('.bgei a').attr('href')?.replace(/^https:\/\/komiku\.id\/manga\//, '').replace(/\/$/, '') || '#';
+      const slug = $(element).find('.bgei a').attr('href')?.replace(/^https:\/\/komiku\.org\/manga\//, '').replace(/\/$/, '') || '#';
       const image = $(element).find('.bgei img').attr('src');
       const type = $(element).find('.tpe1_inf b').text().trim();
       const genre = $(element).find('.tpe1_inf').text().replace(type, '').trim();

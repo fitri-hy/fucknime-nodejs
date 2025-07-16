@@ -1,13 +1,14 @@
 const axios = require('axios');
 const cheerio = require('cheerio');
 const { setCache } = require('../../middlewares/CacheAPI');
+const { ProtocolFallback } = require('../../helpers/ProtocolHelper');
 
 exports.index = async (req, res) => {
   try {
     const { q = '', page = 1 } = req.query;
-    const url = `https://v9.animasu.cc/page/${page}/?s=${q}`;
+    const url = `v1.animasu.top/page/${page}/?s=${q}`;
 
-    const { data } = await axios.get(url);
+    const data = await ProtocolFallback(url);
     const $ = cheerio.load(data);
 
     const results = [];

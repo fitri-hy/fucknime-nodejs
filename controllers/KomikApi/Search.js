@@ -1,13 +1,14 @@
 const axios = require('axios');
 const cheerio = require('cheerio');
 const { setCache } = require('../../middlewares/CacheAPI');
+const { ProtocolFallback } = require('../../helpers/ProtocolHelper');
 
 exports.index = async (req, res) => {
     const { q = '', page = 1 } = req.query;
   
   try {
-    const response = await axios.get(`https://api.komiku.id/page/${page}/?post_type=manga&s=${q}`);
-    const html = response.data;
+	const url = `komiku.org/page/${page}/?post_type=manga&s=${q}`;
+    const html = await ProtocolFallback(url);
     const $ = cheerio.load(html);
 	
 	const list = [];

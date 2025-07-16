@@ -1,11 +1,12 @@
 const axios = require('axios');
 const cheerio = require('cheerio');
 const { setCache } = require('../../middlewares/CacheAPI');
+const { ProtocolFallback } = require('../../helpers/ProtocolHelper');
 
 exports.index = async (req, res) => {
   try {
-    const response = await axios.get('https://komiku.id/pustaka/');
-    const html = response.data;
+	const url = `komiku.org/pustaka/`;
+    const html = await ProtocolFallback(url);
     const $ = cheerio.load(html);
 
     const order = [];

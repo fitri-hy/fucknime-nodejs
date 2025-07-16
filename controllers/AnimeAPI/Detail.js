@@ -1,17 +1,18 @@
 const axios = require('axios');
 const cheerio = require('cheerio');
 const { setCache } = require('../../middlewares/CacheAPI');
+const { ProtocolFallback } = require('../../helpers/ProtocolHelper');
 
 exports.index = async (req, res) => {
   try {
     const { slug } = req.params;
-    const url = `https://v9.animasu.cc/anime/${slug}`;
+    const url = `v1.animasu.top/anime/${slug}`;
 
-    const { data } = await axios.get(url);
+    const data = await ProtocolFallback(url);
     const $ = cheerio.load(data);
 
     const title = $('.infox h1[itemprop="headline"]').text().trim();
-    const imageUrl = `https:${$('.thumb img').attr('data-lazy-src')}`;
+    const imageUrl = `https:${$('.thumb img').attr('src')}`;
     const description = $('.sepele').text().trim().replace(/Animasu/gi, 'FuckNime') || "-";
     const status = $('.spe span:contains("Status:") font').text().trim() || "-";
     const releaseDate = $('.spe span.split:contains("Rilis:")').text().replace('Rilis:', '').trim() || "-";
