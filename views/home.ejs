@@ -223,7 +223,7 @@
         const slider = document.getElementById("slider");
         const images = document.querySelectorAll(".slider > div");
         const totalItems = images.length;
-        const imageWidth = 300 + 16; // 300px + 16px gap (1rem)
+        const imageWidth = 300 + 16;
         
         function updateSlider() {
             slider.style.transform = `translateX(-${index * imageWidth}px)`;
